@@ -49,6 +49,7 @@ import IndoorMap from './examples/IndoorMap';
 import CameraControl from './examples/CameraControl';
 import MassiveCustomMarkers from './examples/MassiveCustomMarkers';
 import GeojsonMap from './examples/Geojson';
+import CustomSecuredTiles from './examples/CustomSecuredTiles';
 
 const IOS = Platform.OS === 'ios';
 const ANDROID = Platform.OS === 'android';
@@ -139,6 +140,8 @@ export default class App extends React.Component<Props> {
     return this.renderExamples(
       [
         // [<component>, <component description>, <Google compatible>, <Google add'l description>]
+        [CustomTiles, 'Custom Tiles', true],
+        [CustomSecuredTiles, 'Custom Secured Tiles', true],
         [StaticMap, 'StaticMap', true],
         [DisplayLatLng, 'Tracking Position', true, '(incomplete)'],
         [ViewsAsMarkers, 'Arbitrary Views as Markers', true],
@@ -161,7 +164,6 @@ export default class App extends React.Component<Props> {
         [FitToSuppliedMarkers, 'Focus Map On Markers', true],
         [FitToCoordinates, 'Fit Map To Coordinates', true],
         [LiteMapView, 'Android Lite MapView'],
-        [CustomTiles, 'Custom Tiles', true],
         [WMSTiles, 'WMS Tiles', true],
         [ZIndexMarkers, 'Position Markers with Z-index', true],
         [MapStyle, 'Customize the style of the map', true],
@@ -194,7 +196,7 @@ const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
     justifyContent: 'flex-end',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   scrollview: {
     alignItems: 'center',

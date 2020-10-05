@@ -663,6 +663,10 @@ public class AirMapView extends MapView implements GoogleMap.InfoWindowAdapter,
       AirMapUrlTile urlTileView = (AirMapUrlTile) child;
       urlTileView.addToMap(map);
       features.add(index, urlTileView);
+    } else if (child instanceof AirMapSecuredUrlTile) {
+      AirMapSecuredUrlTile securedUrlTileView = (AirMapSecuredUrlTile) child;
+      securedUrlTileView.addToMap(map);
+      features.add(index, securedUrlTileView);
     } else if (child instanceof AirMapWMSTile) {
       AirMapWMSTile urlTileView = (AirMapWMSTile) child;
       urlTileView.addToMap(map);

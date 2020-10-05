@@ -459,7 +459,7 @@ declare module "react-native-maps" {
   export class Circle extends React.Component<MapCircleProps, any> {}
 
   // =======================================================================
-  //  UrlTile & LocalTile
+  //  UrlTile & LocalTile & SecuredUrlTile
   // =======================================================================
 
   export interface MapUrlTileProps extends ViewProperties {
@@ -482,6 +482,19 @@ declare module "react-native-maps" {
   }
 
   export class LocalTile extends React.Component<MapLocalTileProps, any> {}
+
+  export interface MapSecuredUrlTileProps extends ViewProperties {
+    urlTemplate: string;
+    minimumZ?: number;
+    maximumZ?: number;
+    zIndex?: number;
+    tileSize?: number;
+    shouldReplaceMapContent?:boolean;
+    flipY?: boolean;
+    accessToken: string;
+  }
+
+  export class SecuredUrlTile extends React.Component<MapSecuredUrlTileProps, any> {}
 
   // =======================================================================
   //  WMSTile
