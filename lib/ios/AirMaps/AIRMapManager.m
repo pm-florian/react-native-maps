@@ -23,6 +23,7 @@
 #import "AIRMapCircle.h"
 #import "SMCalloutView.h"
 #import "AIRMapUrlTile.h"
+#import "AIRMapSecuredUrlTile.h"
 #import "AIRMapWMSTile.h"
 #import "AIRMapLocalTile.h"
 #import "AIRMapSnapshot.h"
@@ -824,6 +825,8 @@ RCT_EXPORT_METHOD(coordinateForPoint:(nonnull NSNumber *)reactTag
         return ((AIRMapCircle *)overlay).renderer;
     } else if ([overlay isKindOfClass:[AIRMapUrlTile class]]) {
         return ((AIRMapUrlTile *)overlay).renderer;
+    } else if ([overlay isKindOfClass:[AIRMapSecuredUrlTile class]]) {
+        return ((AIRMapSecuredUrlTile *)overlay).renderer;
     } else if ([overlay isKindOfClass:[AIRMapWMSTile class]]) {
         return ((AIRMapWMSTile *)overlay).renderer;
     } else if ([overlay isKindOfClass:[AIRMapLocalTile class]]) {
